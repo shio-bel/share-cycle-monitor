@@ -3,13 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>シェアサイクル公募・入札情報</title>
+    <title>シェアサイクル公募・入札情報 | 関東地方</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>シェアサイクル公募・入札監視</h1>
-        <p class="subtitle">関東地方の自治体情報</p>
+        <div class="header-inner">
+            <div>
+                <h1>シェアサイクル公募・入札監視</h1>
+                <p class="subtitle">関東地方の自治体シェアサイクル情報</p>
+            </div>
+        </div>
     </header>
 
     <main>
@@ -36,7 +40,7 @@
                 <select id="source">
                     <option value="">すべて</option>
                     <option value="google">Google検索</option>
-                    <option value="kkj">官公需API</option>
+                    <option value="direct">直接監視</option>
                 </select>
             </div>
         </section>
@@ -62,7 +66,7 @@
     </main>
 
     <footer>
-        <p>データソース: Google Custom Search API / 官公需情報ポータルサイト</p>
+        <p>データソース: Google Custom Search API / 自治体公式サイト直接監視</p>
     </footer>
 
     <script src="app.js"></script>

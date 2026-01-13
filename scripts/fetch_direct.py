@@ -3,10 +3,11 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+import re
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 # 直接監視するページのリスト
 WATCH_PAGES = [
@@ -35,6 +36,39 @@ def fetch_page(url: str) -> str:
         return ""
 
 
+def extract_update_date(soup: BeautifulSoup, text: str) -> Optional[str]:
+    """ページから更新日を抽出"""
+    # パターン1: 「更新日：2025年12月24日」形式
+    patterns = [
+        r'更新日[：:]\s*(\d{4}年\d{1,2}月\d{1,2}日)',
+        r'最終更新[：:]\s*(\d{4}年\d{1,2}月\d{1,2}日)',
+        r'更新日[：:]\s*(\d{4}/\d{1,2}/\d{1,2})',
+        r'(\d{4}年\d{1,2}月\d{1,2}日)\s*更新',
+        r'(\d{4}-\d{2}-\d{2})',
+    ]
+
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if match:
+            date_str = match.group(1)
+            # 日付を統一形式に変換
+            try:
+                if '年' in date_str:
+                    date_str = date_str.replace('年', '-').replace('月', '-').replace('日', '')
+                elif '/' in date_str:
+                    date_str = date_str.replace('/', '-')
+                return date_str
+            except:
+                return date_str
+
+    # metaタグから取得を試みる
+    meta_modified = soup.find("meta", {"name": "lastmod"}) or soup.find("meta", {"property": "article:modified_time"})
+    if meta_modified and meta_modified.get("content"):
+        return meta_modified["content"][:10]
+
+    return None
+
+
 def extract_info(html: str, page_config: Dict[str, Any]) -> Dict[str, Any]:
     """ページから情報を抽出"""
     soup = BeautifulSoup(html, "html.parser")
@@ -46,6 +80,9 @@ def extract_info(html: str, page_config: Dict[str, Any]) -> Dict[str, Any]:
     # メインコンテンツからテキスト抽出
     main = soup.find("main") or soup.find("div", {"id": "content"}) or soup.find("body")
     text = main.get_text(" ", strip=True) if main else ""
+
+    # 更新日を抽出
+    update_date = extract_update_date(soup, text)
 
     # キーワードマッチング
     matched_keywords = []
@@ -60,6 +97,7 @@ def extract_info(html: str, page_config: Dict[str, Any]) -> Dict[str, Any]:
         "organization": page_config.get("organization", ""),
         "snippet": text[:200] + "..." if len(text) > 200 else text,
         "matched_keywords": matched_keywords,
+        "update_date": update_date,
         "source": "direct",
         "fetched_at": datetime.now().isoformat(),
     }

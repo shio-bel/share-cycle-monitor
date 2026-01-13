@@ -45,19 +45,33 @@ function updateStats() {
     // 最終更新日時
     if (allData.length > 0 && allData[0].fetched_at) {
         const date = new Date(allData[0].fetched_at);
-        lastUpdate.textContent = formatDate(date);
+        lastUpdate.textContent = formatDateTime(date);
     } else {
         lastUpdate.textContent = '-';
     }
 }
 
-// 日付フォーマット
-function formatDate(date) {
+// 日付フォーマット（日時）
+function formatDateTime(date) {
     const month = date.getMonth() + 1;
     const day = date.getDate();
     const hours = date.getHours().toString().padStart(2, '0');
     const minutes = date.getMinutes().toString().padStart(2, '0');
     return `${month}/${day} ${hours}:${minutes}`;
+}
+
+// 日付フォーマット（日付のみ）
+function formatDate(dateStr) {
+    if (!dateStr) return '';
+    // YYYY-MM-DD形式を想定
+    const parts = dateStr.split('-');
+    if (parts.length === 3) {
+        const year = parts[0];
+        const month = parseInt(parts[1], 10);
+        const day = parseInt(parts[2], 10);
+        return `${year}/${month}/${day}`;
+    }
+    return dateStr;
 }
 
 // 24時間以内かチェック
@@ -82,7 +96,8 @@ function renderResults() {
 
     const html = filteredData.map(item => {
         const isNewItem = isNew(item.fetched_at);
-        const sourceLabel = item.source === 'google' ? 'Google' : '官公需';
+        const sourceLabel = item.source === 'google' ? 'Google' : '直接監視';
+        const updateDateFormatted = formatDate(item.update_date);
 
         return `
             <article class="result-card ${isNewItem ? 'new' : ''}">
@@ -94,14 +109,15 @@ function renderResults() {
                     </h2>
                     <div class="result-badges">
                         ${isNewItem ? '<span class="badge badge-new">NEW</span>' : ''}
+                        ${item.update_date ? `<span class="badge badge-date">更新: ${updateDateFormatted}</span>` : ''}
                         ${item.prefecture ? `<span class="badge badge-prefecture">${escapeHtml(item.prefecture)}</span>` : ''}
                         <span class="badge badge-source">${sourceLabel}</span>
                     </div>
                 </div>
                 <div class="result-meta">
                     ${item.organization ? `<span>発注機関: ${escapeHtml(item.organization)}</span>` : ''}
-                    ${item.deadline ? `<span>締切: ${escapeHtml(item.deadline)}</span>` : ''}
-                    ${item.fetched_at ? `<span>取得: ${formatDate(new Date(item.fetched_at))}</span>` : ''}
+                    ${item.update_date ? `<span class="update-date">記事更新日: ${updateDateFormatted}</span>` : ''}
+                    ${item.fetched_at ? `<span>取得: ${formatDateTime(new Date(item.fetched_at))}</span>` : ''}
                 </div>
                 ${item.snippet ? `<p class="result-snippet">${escapeHtml(item.snippet)}</p>` : ''}
             </article>

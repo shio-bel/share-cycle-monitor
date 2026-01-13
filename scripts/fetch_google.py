@@ -3,10 +3,18 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+import re
 import requests
 from datetime import datetime
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 from config import GOOGLE_API_KEY, GOOGLE_CSE_ID, SEARCH_QUERIES, KANTO_KEYWORDS
+
+# 月名を数字に変換
+MONTH_MAP = {
+    'Jan': '01', 'Feb': '02', 'Mar': '03', 'Apr': '04',
+    'May': '05', 'Jun': '06', 'Jul': '07', 'Aug': '08',
+    'Sep': '09', 'Oct': '10', 'Nov': '11', 'Dec': '12'
+}
 
 
 def search_google(query: str, start: int = 1) -> List[Dict[str, Any]]:
@@ -34,12 +42,39 @@ def search_google(query: str, start: int = 1) -> List[Dict[str, Any]]:
         return []
 
 
+def extract_date_from_snippet(snippet: str) -> Optional[str]:
+    """snippetから更新日を抽出"""
+    # パターン1: "Dec 4, 2025" 形式（Google検索結果でよく見る）
+    match = re.match(r'^([A-Z][a-z]{2})\s+(\d{1,2}),\s+(\d{4})', snippet)
+    if match:
+        month = MONTH_MAP.get(match.group(1), '01')
+        day = match.group(2).zfill(2)
+        year = match.group(3)
+        return f"{year}-{month}-{day}"
+
+    # パターン2: "2025年12月24日" 形式
+    match = re.search(r'(\d{4})年(\d{1,2})月(\d{1,2})日', snippet)
+    if match:
+        return f"{match.group(1)}-{match.group(2).zfill(2)}-{match.group(3).zfill(2)}"
+
+    # パターン3: "2025/12/24" 形式
+    match = re.search(r'(\d{4})/(\d{1,2})/(\d{1,2})', snippet)
+    if match:
+        return f"{match.group(1)}-{match.group(2).zfill(2)}-{match.group(3).zfill(2)}"
+
+    return None
+
+
 def parse_search_result(item: Dict[str, Any]) -> Dict[str, Any]:
     """検索結果を解析して標準形式に変換"""
+    snippet = item.get("snippet", "")
+    update_date = extract_date_from_snippet(snippet)
+
     return {
         "title": item.get("title", ""),
         "url": item.get("link", ""),
-        "snippet": item.get("snippet", ""),
+        "snippet": snippet,
+        "update_date": update_date,
         "source": "google",
         "fetched_at": datetime.now().isoformat(),
     }
