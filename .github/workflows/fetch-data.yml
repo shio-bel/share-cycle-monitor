@@ -1,0 +1,61 @@
+name: Fetch Share Cycle Data
+
+on:
+  schedule:
+    # 毎日 8:00 JST (23:00 UTC前日)
+    - cron: '0 23 * * *'
+    # 毎日 18:00 JST (9:00 UTC)
+    - cron: '0 9 * * *'
+  workflow_dispatch:  # 手動実行用
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run fetch script
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_CSE_ID: ${{ secrets.GOOGLE_CSE_ID }}
+          GMAIL_ADDRESS: ${{ secrets.GMAIL_ADDRESS }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
+        run: |
+          cd scripts
+          python main.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet data/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/
+          git commit -m "$(cat <<'EOF'
+          Update share cycle data
+
+          Co-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>
+          EOF
+          )"
+          git push

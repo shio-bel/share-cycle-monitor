@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>シェアサイクル公募・入札情報</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>シェアサイクル公募・入札監視</h1>
+        <p class="subtitle">関東地方の自治体情報</p>
+    </header>
+
+    <main>
+        <section class="filters">
+            <div class="filter-group">
+                <label for="search">キーワード検索</label>
+                <input type="text" id="search" placeholder="案件名、機関名で検索...">
+            </div>
+            <div class="filter-group">
+                <label for="prefecture">都道府県</label>
+                <select id="prefecture">
+                    <option value="">すべて</option>
+                    <option value="東京">東京</option>
+                    <option value="神奈川">神奈川</option>
+                    <option value="埼玉">埼玉</option>
+                    <option value="千葉">千葉</option>
+                    <option value="茨城">茨城</option>
+                    <option value="栃木">栃木</option>
+                    <option value="群馬">群馬</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="source">情報源</label>
+                <select id="source">
+                    <option value="">すべて</option>
+                    <option value="google">Google検索</option>
+                    <option value="kkj">官公需API</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-value" id="total-count">-</span>
+                <span class="stat-label">全案件</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="new-count">-</span>
+                <span class="stat-label">新着(24h)</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-value" id="last-update">-</span>
+                <span class="stat-label">最終更新</span>
+            </div>
+        </section>
+
+        <section class="results" id="results">
+            <p class="loading">データを読み込み中...</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>データソース: Google Custom Search API / 官公需情報ポータルサイト</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
