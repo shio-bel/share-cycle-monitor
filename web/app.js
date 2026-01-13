@@ -135,11 +135,12 @@ function escapeHtml(text) {
     return div.innerHTML;
 }
 
-// フィルタリング
+// フィルタリングとソート
 function filterData() {
     const searchQuery = document.getElementById('search').value.toLowerCase();
     const prefectureFilter = document.getElementById('prefecture').value;
     const sourceFilter = document.getElementById('source').value;
+    const sortOption = document.getElementById('sort').value;
 
     filteredData = allData.filter(item => {
         // キーワード検索
@@ -168,13 +169,43 @@ function filterData() {
         return true;
     });
 
+    // ソート
+    sortData(sortOption);
+
     renderResults();
+}
+
+// ソート処理
+function sortData(sortOption) {
+    filteredData.sort((a, b) => {
+        switch (sortOption) {
+            case 'fetched_desc':
+                return new Date(b.fetched_at || 0) - new Date(a.fetched_at || 0);
+            case 'fetched_asc':
+                return new Date(a.fetched_at || 0) - new Date(b.fetched_at || 0);
+            case 'update_desc':
+                // 更新日がないものは後ろに
+                if (!a.update_date && !b.update_date) return 0;
+                if (!a.update_date) return 1;
+                if (!b.update_date) return -1;
+                return new Date(b.update_date) - new Date(a.update_date);
+            case 'update_asc':
+                // 更新日がないものは後ろに
+                if (!a.update_date && !b.update_date) return 0;
+                if (!a.update_date) return 1;
+                if (!b.update_date) return -1;
+                return new Date(a.update_date) - new Date(b.update_date);
+            default:
+                return 0;
+        }
+    });
 }
 
 // イベントリスナー設定
 document.getElementById('search').addEventListener('input', filterData);
 document.getElementById('prefecture').addEventListener('change', filterData);
 document.getElementById('source').addEventListener('change', filterData);
+document.getElementById('sort').addEventListener('change', filterData);
 
 // 初期化
 loadData();
