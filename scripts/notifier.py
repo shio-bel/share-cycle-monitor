@@ -56,6 +56,8 @@ def notify_new_items(items: List[Dict[str, Any]]) -> bool:
             body_lines.append(f"発注機関: {item['organization']}")
         if item.get("prefecture"):
             body_lines.append(f"都道府県: {item['prefecture']}")
+        if item.get("update_date"):
+            body_lines.append(f"記事更新日: {item['update_date']}")
         if item.get("deadline"):
             body_lines.append(f"締切日: {item['deadline']}")
         body_lines.append(f"URL: {item.get('url', '')}")
