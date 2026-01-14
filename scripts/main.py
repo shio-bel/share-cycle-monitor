@@ -42,6 +42,16 @@ def save_seen_urls(urls: set) -> None:
     save_json(SEEN_URLS_FILE, list(urls))
 
 
+def deduplicate_by_url(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """URLで重複を排除（最新のものを保持）"""
+    seen = {}
+    for item in items:
+        url = item.get("url", "")
+        if url and url not in seen:
+            seen[url] = item
+    return list(seen.values())
+
+
 def merge_results(
     google_results: List[Dict[str, Any]],
     kkj_results: List[Dict[str, Any]],
@@ -106,6 +116,10 @@ def main():
         combined_results = new_results + existing_results
     else:
         combined_results = new_results
+
+    # URLで重複を排除
+    combined_results = deduplicate_by_url(combined_results)
+    print(f"重複排除後: {len(combined_results)}件")
 
     # 結果を保存
     save_json(RESULTS_FILE, combined_results)
