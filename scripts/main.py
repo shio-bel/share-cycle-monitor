@@ -133,12 +133,11 @@ def main():
     save_seen_urls(seen_urls)
     print(f"既出URL更新: {len(seen_urls)}件")
 
-    # 新着があれば通知
-    if new_results:
-        print("\n--- メール通知 ---")
-        notify_new_items(new_results)
-    else:
-        print("\n新着案件なし。通知をスキップ。")
+    # 過去24時間以内の更新があれば通知（新着/既報を区別）
+    print("\n--- メール通知 ---")
+    # 通知前のseen_urlsを渡す（新着/既報の判定用）
+    old_seen_urls = seen_urls - {item.get("url") for item in new_results}
+    notify_new_items(all_results, old_seen_urls)
 
     print(f"\n=== 処理完了: {datetime.now().isoformat()} ===")
 
