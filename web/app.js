@@ -11,8 +11,9 @@ async function loadData() {
             throw new Error('データの読み込みに失敗しました');
         }
         allData = await response.json();
-        filteredData = allData;
+        filteredData = [...allData];
         updateStats();
+        sortData('update_desc');  // デフォルトで更新日順にソート
         renderResults();
     } catch (error) {
         console.error('Error:', error);
