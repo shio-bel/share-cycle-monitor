@@ -9,15 +9,182 @@ from bs4 import BeautifulSoup
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 
+# 共通キーワード
+COMMON_KEYWORDS = [
+    "シェアサイクル", "電動キックボード", "特定小型原動機付自転車", "特定小型原付",
+    "マイクロモビリティ", "公募", "募集", "事業者", "プロポーザル",
+]
+
 # 直接監視するページのリスト
 WATCH_PAGES = [
+    # 東京都
+    {
+        "url": "https://www.kotsu.metro.tokyo.jp/other/kanren/",
+        "prefecture": "東京",
+        "organization": "東京都交通局",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 千代田区
+    {
+        "url": "https://www.city.chiyoda.lg.jp/koho/kuse/nyusatsu/proposal/index.html",
+        "prefecture": "東京",
+        "organization": "千代田区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 中央区
+    {
+        "url": "https://www.city.chuo.lg.jp/kusei/keiyakunyusatsu/propo/index.html",
+        "prefecture": "東京",
+        "organization": "中央区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 港区
+    {
+        "url": "https://www.city.minato.tokyo.jp/keiyaku/kuse/nyusatsu/keyaku/proposal.html",
+        "prefecture": "東京",
+        "organization": "港区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 新宿区
+    {
+        "url": "https://www.city.shinjuku.lg.jp/jigyo/index02_pps.html",
+        "prefecture": "東京",
+        "organization": "新宿区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 文京区
+    {
+        "url": "https://www.city.bunkyo.lg.jp/b003/p007435.html",
+        "prefecture": "東京",
+        "organization": "文京区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 台東区
+    {
+        "url": "https://www.city.taito.lg.jp/jigyosha/keiyaku/proposal/index.html",
+        "prefecture": "東京",
+        "organization": "台東区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 墨田区
     {
         "url": "https://www.city.sumida.lg.jp/kurashi/jitensha/bicycle/share_cycle.html",
         "prefecture": "東京",
         "organization": "墨田区",
-        "keywords": ["シェアサイクル", "公募", "募集", "事業者"],
+        "keywords": COMMON_KEYWORDS,
     },
-    # 必要に応じて追加
+    # 江東区
+    {
+        "url": "https://www.city.koto.lg.jp/053101/20190319puropo.html",
+        "prefecture": "東京",
+        "organization": "江東区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 品川区
+    {
+        "url": "https://www.city.shinagawa.tokyo.jp/PC/kuseizyoho/kuseizyoho-siryo/kuseizyoho-siryo-keiyaku/kuseizyoho-siryo-keiyaku-hacchu/index.html",
+        "prefecture": "東京",
+        "organization": "品川区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 目黒区
+    {
+        "url": "https://www.city.meguro.tokyo.jp/shigoto/nyuusatsu/joujou/index.html",
+        "prefecture": "東京",
+        "organization": "目黒区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 大田区
+    {
+        "url": "https://www.city.ota.tokyo.jp/jigyousha/boshuu_shitei/index.html",
+        "prefecture": "東京",
+        "organization": "大田区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 世田谷区
+    {
+        "url": "https://www.city.setagaya.lg.jp/mokuji/kusei/002/003/index.html",
+        "prefecture": "東京",
+        "organization": "世田谷区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 渋谷区
+    {
+        "url": "https://www.city.shibuya.tokyo.jp/jigyosha/proposal/proposal/",
+        "prefecture": "東京",
+        "organization": "渋谷区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 中野区
+    {
+        "url": "https://www.city.tokyo-nakano.lg.jp/jigyosha/nyusatsu/jigyousyasentei-bosyu/index.html",
+        "prefecture": "東京",
+        "organization": "中野区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 杉並区
+    {
+        "url": "https://www.city.suginami.tokyo.jp/nyuusatsuoshirase/proposal/index.html",
+        "prefecture": "東京",
+        "organization": "杉並区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 豊島区
+    {
+        "url": "https://www.city.toshima.lg.jp/kuse/nyusatsu/proposal/bosyuu/index.html",
+        "prefecture": "東京",
+        "organization": "豊島区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 北区
+    {
+        "url": "https://www.city.kita.lg.jp/city-information/contract/1011617/1011618/index.html",
+        "prefecture": "東京",
+        "organization": "北区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 荒川区
+    {
+        "url": "https://www.city.arakawa.tokyo.jp/jigyousha/nyusatsu/proposal/index.html",
+        "prefecture": "東京",
+        "organization": "荒川区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 板橋区
+    {
+        "url": "https://www.city.itabashi.tokyo.jp/bunka/proposal/boshu/index.html",
+        "prefecture": "東京",
+        "organization": "板橋区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 練馬区
+    {
+        "url": "https://www.city.nerima.tokyo.jp/jigyoshamuke/jigyosha/oshirase/index.html",
+        "prefecture": "東京",
+        "organization": "練馬区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 足立区
+    {
+        "url": "https://www.city.adachi.tokyo.jp/shigoto/nyusatsu/jigyosha/proposal/index.html",
+        "prefecture": "東京",
+        "organization": "足立区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 葛飾区
+    {
+        "url": "https://www.city.katsushika.lg.jp/business/1000011/1000067/1005056/index.html",
+        "prefecture": "東京",
+        "organization": "葛飾区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 江戸川区
+    {
+        "url": "https://www.city.edogawa.tokyo.jp/shigotosangyo/proposal/index.html",
+        "prefecture": "東京",
+        "organization": "江戸川区",
+        "keywords": COMMON_KEYWORDS,
+    },
 ]
 
 
