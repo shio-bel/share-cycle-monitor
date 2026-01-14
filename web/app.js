@@ -137,7 +137,6 @@ function escapeHtml(text) {
 function filterData() {
     const searchQuery = document.getElementById('search').value.toLowerCase();
     const prefectureFilter = document.getElementById('prefecture').value;
-    const sourceFilter = document.getElementById('source').value;
     const sortOption = document.getElementById('sort').value;
 
     filteredData = allData.filter(item => {
@@ -156,11 +155,6 @@ function filterData() {
 
         // 都道府県フィルター
         if (prefectureFilter && item.prefecture !== prefectureFilter) {
-            return false;
-        }
-
-        // 情報源フィルター
-        if (sourceFilter && item.source !== sourceFilter) {
             return false;
         }
 
@@ -202,7 +196,6 @@ function sortData(sortOption) {
 // イベントリスナー設定
 document.getElementById('search').addEventListener('input', filterData);
 document.getElementById('prefecture').addEventListener('change', filterData);
-document.getElementById('source').addEventListener('change', filterData);
 document.getElementById('sort').addEventListener('change', filterData);
 
 // 初期化
