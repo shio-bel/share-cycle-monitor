@@ -1,5 +1,368 @@
 [
   {
+    "title": "関連事業 ｜ 東京都交通局",
+    "url": "https://www.kotsu.metro.tokyo.jp/other/kanren/",
+    "prefecture": "東京",
+    "organization": "東京都交通局",
+    "snippet": "ページの先頭です ページ内を移動するためのリンク 本文(c)へ グローバルナビゲーション(g)へ サイトのご利用案内(i)へ 音声読み上げ 文字サイズ・色合い変更 Language 都庁総合トップページ サイトマップ 音声読み上げ Language ここからグローバルナビです。 トップ ページ 都営地下鉄 運行情報 時刻表 路線図 停車駅 各駅情報 運賃・経路・所要時間（検索） 運賃・乗車券・定期...",
+    "matched_keywords": [
+      "募集"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:28.248539"
+  },
+  {
+    "title": "千代田区ホームページ - プロポーザル情報",
+    "url": "https://www.city.chiyoda.lg.jp/koho/kuse/nyusatsu/proposal/index.html",
+    "prefecture": "東京",
+    "organization": "千代田区",
+    "snippet": "このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 トップページ 文字の大きさ・色を変えるには 音声読み上げ Multilingual サイト内検索 千代田区コールセンター 03-3264-3910 年中無休　朝8時から夜9時まで 千代田区 暮らし・手続き 健康・福祉 子育て・教育 文化・スポ...",
+    "matched_keywords": [
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": "2026-1-13",
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:28.379119"
+  },
+  {
+    "title": "中央区ホームページ／設計業務委託公募型プロポーザル",
+    "url": "https://www.city.chuo.lg.jp/kusei/keiyakunyusatsu/propo/index.html",
+    "prefecture": "東京",
+    "organization": "中央区",
+    "snippet": "ページID：7030 ここから本文です。 設計業務委託公募型プロポーザル 日本橋中学校改築及び千代田公園整備工事設計業務委託公募型プロポーザル 晴海西小学校第二校舎建設工事設計業務委託公募型プロポーザル 晴海四丁目施設建設工事設計業務委託公募型プロポーザル 同じカテゴリから探す 契約に関するお知らせ 発注案件 工事発注予定表 設計業務委託公募型プロポーザル 入札経過結果表 このページに知りたい情報...",
+    "matched_keywords": [
+      "公募",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:28.563737"
+  },
+  {
+    "title": "港区ホームページ／プロポーザル",
+    "url": "https://www.city.minato.tokyo.jp/keiyaku/kuse/nyusatsu/keyaku/proposal.html",
+    "prefecture": "東京",
+    "organization": "港区",
+    "snippet": "トップページ > 産業・ビジネス > 入札・契約 > プロポーザル ページID：162718 ここから本文です。 プロポーザル プロポーザル（募集中） オンライン英会話教室事業業務委託事業候補者をプロポーザル方式により募集します 公害総合情報システム構築及び保守管理業務委託事業候補者をプロポーザル方式により募集します MINATOビジョンデザイン編集等支援業務委託事業候補者をプロポーザル方式により...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:28.745002"
+  },
+  {
+    "title": "プロポーザル情報：新宿区",
+    "url": "https://www.city.shinjuku.lg.jp/jigyo/index02_pps.html",
+    "prefecture": "東京",
+    "organization": "新宿区",
+    "snippet": "このサイトではJavaScriptを使用しています。JavaScriptを無効にしている場合、機能が制限されますのでご了承ください。 本文へ サイトマップ アクセス等 問い合わせ 携帯サイト 検索の方法 文字サイズ : 標準 拡大 色変更・音声読み上げ Language ホーム くらし 戸籍・住民票・印鑑登録 ・マイナンバーカード 電子申請サービス 保険・年金・税金 出産・子ども・教育 福祉・介護...",
+    "matched_keywords": [
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:28.982983"
+  },
+  {
+    "title": "事業者向けプロポーザル | 文京区",
+    "url": "https://www.city.bunkyo.lg.jp/b003/p007435.html",
+    "prefecture": "東京",
+    "organization": "文京区",
+    "snippet": "このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 文京区 やさしい日本語ON みえかたサポート 文字サイズ・色合い変更 音声読み上げ 閉じる Language 日本語 English 한국어 简体中文 繁體中文 閉じる 緊急情報 検索 検索 メニュー 分類別 閉じる ホーム お役立ちリンク ...",
+    "matched_keywords": [
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:29.225354"
+  },
+  {
+    "title": "公募型プロポーザル情報　台東区ホームページ",
+    "url": "https://www.city.taito.lg.jp/jigyosha/keiyaku/proposal/index.html",
+    "prefecture": "東京",
+    "organization": "台東区",
+    "snippet": "本文ここから 公募型プロポーザル情報 ページID：866712888 台東区客引き行為等防止指導員業務委託にかかる公募型プロポーザルを実施します 観光バス等誘導警備業務委託に係る公募型プロポーザルを実施します 【受付は終了しました】台東区立浅草公会堂デジタルサイネージ設置・運用事業者を募集します 台東区ふるさと納税支援業務にかかる公募型プロポーザルを実施します 台東区中小企業振興センターリニューア...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:29.347426"
+  },
+  {
+    "title": "墨田区管理用地（道路・公園・河川）を使用するシェアリング事業者を公募します　墨田区公式ホームページ",
+    "url": "https://www.city.sumida.lg.jp/kurashi/jitensha/bicycle/share_cycle.html",
+    "prefecture": "東京",
+    "organization": "墨田区",
+    "snippet": "墨田区管理用地（道路・公園・河川）を使用するシェアリング事業者を公募します ページID：781301013 更新日：2025年12月24日 区では、令和2年1月から実施した「墨田区シェアサイクル社会実験事業」の結果、シェアサイクルの利用は着実に増加していること、自転車総量の抑制や区民の利便性向上に一定の寄与があると認められることから、令和6年2月にシェアリング事業者に区管理用地を有償で使用させる公...",
+    "matched_keywords": [
+      "シェアサイクル",
+      "公募",
+      "募集",
+      "事業者"
+    ],
+    "update_date": "2025-12-24",
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:29.473787"
+  },
+  {
+    "title": "プロポーザル関連情報｜江東区",
+    "url": "https://www.city.koto.lg.jp/053101/20190319puropo.html",
+    "prefecture": "東京",
+    "organization": "江東区",
+    "snippet": "プロポーザル関連情報 公募案件 【受付終了】江東お店の魅力発掘発信事業（ことみせ）業務委託に係る公募型プロポーザルの実施について（1月7日） 江東ブランド推進事業運営業務委託に係る公募プロポーザルの実施について（1月6日） 【受付終了】江東区不燃化特区推進事業における現地相談ステーション運営管理・戸別訪問等に係る公募型プロポーザルの実施について（1月5日） 江東区まなびサポート事業（まなび塾）業務...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:29.786074"
+  },
+  {
+    "title": "公表発注案件(制限付き一般競争入札・プロポーザル等の発注案件)｜品川区",
+    "url": "https://www.city.shinagawa.tokyo.jp/PC/kuseizyoho/kuseizyoho-siryo/kuseizyoho-siryo-keiyaku/kuseizyoho-siryo-keiyaku-hacchu/index.html",
+    "prefecture": "東京",
+    "organization": "品川区",
+    "snippet": "本文へ移動します。 文字の大きさや色を変更する機能にはJavaScriptを使用しています。 正しく動作させるには、JavaScriptの機能を有効にしてください。 品川区 輝く笑顔 住み続けたいまち しながわ スマホ表示 pc表示 地図 色変更 音声読み上げ 文字サイズ 標準 大 特大 色/音声 色変更 音声読み上げ 閉じる Language English 简体中文 한국어 Deutsch I...",
+    "matched_keywords": [
+      "シェアサイクル",
+      "公募",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:29.895978"
+  },
+  {
+    "title": "事業者・指定管理者の募集 | 目黒区",
+    "url": "https://www.city.meguro.tokyo.jp/shigoto/nyuusatsu/joujou/index.html",
+    "prefecture": "東京",
+    "organization": "目黒区",
+    "snippet": "ここから本文です。 事業者・指定管理者の募集 「目黒区人財育成方針効果検証及び人事戦略策定支援業務委託」の受託候補者を公募型プロポーザル方式により募集します デジタル人材育成支援等業務についての委託事業者を公募型プロポーザル方式により募集します 「保育所運営費等事務業務」の受託候補者を公募型プロポーザル方式により募集します 統一的な基準による財務書類作成及び活用支援業務委託の提案を募集します 東急...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:30.012598"
+  },
+  {
+    "title": "大田区ホームページ：受託事業者・運営事業者の募集",
+    "url": "https://www.city.ota.tokyo.jp/jigyousha/boshuu_shitei/index.html",
+    "prefecture": "東京",
+    "organization": "大田区",
+    "snippet": "本文ここから 受託事業者・運営事業者の募集 ページ番号：388225900 大田区職員給与・福利厚生事務等業務委託における公募型プロポーザル選定結果について 大田区コミュニティセンター羽田旭の指定管理者を指定しました 大田区国民健康保険窓口業務等委託事業者を募集します（プロポーザル方式） 大田区立障害者福祉施設の指定管理者を指定しました 「令和8年度大田区中学校生徒海外派遣事業」を委託する事業者を...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:30.086699"
+  },
+  {
+    "title": "地域行政制度 | 世田谷区公式ホームページ",
+    "url": "https://www.city.setagaya.lg.jp/mokuji/kusei/002/003/index.html",
+    "prefecture": "東京",
+    "organization": "世田谷区",
+    "snippet": "このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 世田谷区 閲覧支援 閲覧支援 文字サイズ・色合い変更 音声読み上げ ふりがな表示 閉じる Foreign Language Foreign Language 外国人住民の方へ For foreign residents 閉じる アクセス・施設...",
+    "matched_keywords": [
+      "募集"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:30.412345"
+  },
+  {
+    "title": "プロポーザル | 契約・入札・プロポーザル | 渋谷区ポータル",
+    "url": "https://www.city.shibuya.tokyo.jp/jigyosha/proposal/proposal/",
+    "prefecture": "東京",
+    "organization": "渋谷区",
+    "snippet": "TOP 事業者向け情報 契約・入札・プロポーザル 現在のページ プロポーザル 新着情報 2026年1月8日 渋谷区基幹相談支援センター運営業務委託の事業者選定に関する公募型プロポーザルを実施します 2025年12月26日 便所設計等業務委託（並木橋公衆便所）の事業者選定に関する公募型プロポーザルの選定結果について 2025年12月26日 公園便所設計等業務委託（笹塚公園）の事業者選定に関する公募型...",
+    "matched_keywords": [
+      "公募",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:30.560368"
+  },
+  {
+    "title": "企画提案公募型事業者選定（募集中） | 中野区",
+    "url": "https://www.city.tokyo-nakano.lg.jp/jigyosha/nyusatsu/jigyousyasentei-bosyu/index.html",
+    "prefecture": "東京",
+    "organization": "中野区",
+    "snippet": "企画提案公募型事業者選定（募集中） ページID： 375679726 中野区区有施設保全計画策定支援業務委託事業者の公募について（令和8年2月6日（金曜日）午後3時まで） 本文ここまで サブナビゲーションここから 入札・契約 電子契約サービスについて 契約・会計書類の押印について 契約情報[工事] 契約情報[物品] 小規模事業者登録制度 準区内業者の取扱い 指定管理者の指定 中野区公契約条例につい...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:30.816431"
+  },
+  {
+    "title": "プロポーザル案件｜杉並区公式ホームページ",
+    "url": "https://www.city.suginami.tokyo.jp/nyuusatsuoshirase/proposal/index.html",
+    "prefecture": "東京",
+    "organization": "杉並区",
+    "snippet": "ここから本文です。 ページID : 10961 プロポーザル案件 令和7年度　プロポーザル案件のご案内 令和6年度　プロポーザル案件のご案内 令和5年度　プロポーザル案件のご案内 ここまでが本文です。 同じカテゴリから探す 入札のお知らせ・電子調達 プロポーザル案件 区有財産貸付・売却に係る一般競争入札（紙入札） 随意契約等の公表 杉並区公契約条例 入札・契約関連情報 各種様式・標準契約書 トピッ...",
+    "matched_keywords": [
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:30.973881"
+  },
+  {
+    "title": "プロポーザル募集案件｜豊島区公式ホームページ",
+    "url": "https://www.city.toshima.lg.jp/kuse/nyusatsu/proposal/bosyuu/index.html",
+    "prefecture": "東京",
+    "organization": "豊島区",
+    "snippet": "このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 豊島区 防災・安全 見え方 サポート 見え方サポート 文字サイズ・色合い変更 音声読み上げ やさしい日本語 ON OFF 閉じる Foreign Language Foreign Language 外国人のための 生活インフォメーション DA...",
+    "matched_keywords": [
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:31.104123"
+  },
+  {
+    "title": "令和6年度　プロポーザル案件｜東京都北区",
+    "url": "https://www.city.kita.lg.jp/city-information/contract/1011617/1011618/index.html",
+    "prefecture": "東京",
+    "organization": "北区",
+    "snippet": "令和6年度　プロポーザル案件 ページ番号1011618 印刷 大きな文字で印刷 東京都北区ブランディングロゴ・ロゴガイドライン等制作業務委託プロポーザル審査結果 東京都北区インスタグラム公式アカウント運用等業務委託プロポーザル審査結果 北区立児童発達支援センター運営業務委託プロポーザルの審査結果 十条地区にぎわい創出支援業務委託プロポーザル審査結果 王子駅周辺エリアプラットフォーム支援業務委託プロ...",
+    "matched_keywords": [
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:31.328185"
+  },
+  {
+    "title": "事業者向けプロポーザル／荒川区公式サイト",
+    "url": "https://www.city.arakawa.tokyo.jp/jigyousha/nyusatsu/proposal/index.html",
+    "prefecture": "東京",
+    "organization": "荒川区",
+    "snippet": "ページID：1429 ここから本文です。 事業者向けプロポーザル 募集 結果 入札・契約 入札・契約関連規定等 様式ダウンロード 入札等の公示 事業者向けプロポーザル 発注予定 入札結果・低入札価格調査結果 随意契約結果情報 入札参加資格登録等に関するお知らせ その他のお知らせ",
+    "matched_keywords": [
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:31.490277"
+  },
+  {
+    "title": "プロポーザル案件の募集｜板橋区公式ホームページ",
+    "url": "https://www.city.itabashi.tokyo.jp/bunka/proposal/boshu/index.html",
+    "prefecture": "東京",
+    "organization": "板橋区",
+    "snippet": "プロポーザル案件の募集 ページ番号1005370 印刷 大きな文字で印刷 【公募型プロポーザル】板橋区立グリーンホールレストラン事業者の募集 （募集終了）【公募型プロポーザル】成増生涯学習センター長寿命化改修基本設計・実施設計業務委託 成増生涯学習センター長寿命化改修基本設計・実施設計業務委託の事業者をプロポーザル方式により選定します。 【公募型プロポーザル】高島平緑地（高島平九丁目地区）再整備基...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:31.582894"
+  },
+  {
+    "title": "お知らせ一覧（事業者向け）：練馬区公式ホームページ",
+    "url": "https://www.city.nerima.tokyo.jp/jigyoshamuke/jigyosha/oshirase/index.html",
+    "prefecture": "東京",
+    "organization": "練馬区",
+    "snippet": "練馬区ホームページではJavaScriptを使用しています。JavaScriptの使用を有効にしていない場合は、一部の機能が正確に動作しない恐れがあります。 お手数ですがJavaScriptの使用を有効にしてください。 このページの本文へ移動 音声読み上げ・文字拡大 Multilingual モバイル サイトマップ お知らせ一覧（事業者向け） 現在のページ トップページ 事業者向け 事業者向け情報...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:31.884327"
+  },
+  {
+    "title": "プロポーザル｜足立区",
+    "url": "https://www.city.adachi.tokyo.jp/shigoto/nyusatsu/jigyosha/proposal/index.html",
+    "prefecture": "東京",
+    "organization": "足立区",
+    "snippet": "このサイトではJavaScriptを使用したコンテンツ・機能を提供しています。JavaScriptを有効にするとご利用いただけます。 本文へスキップします。 足立区 ホームに戻る 検索トップ 防災・安全 アクセス メニュー メニュー 音声読み上げ Language 住まい・暮らし 戸籍・税・保険 子育て・教育 健康・福祉 文化・スポーツ まちづくり・都市計画 仕事・産業 区政情報 手続・届け出 施...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:32.006461"
+  },
+  {
+    "title": "提案事業者募集｜葛飾区公式サイト",
+    "url": "https://www.city.katsushika.lg.jp/business/1000011/1000067/1005056/index.html",
+    "prefecture": "東京",
+    "organization": "葛飾区",
+    "snippet": "提案事業者募集 ページ番号1005056 印刷 大きな文字で印刷 新金線を活用した新交通事業化計画策定業務支援委託の提案事業者募集について 新金線を活用した新交通事業化計画策定業務支援委託の提案事業者を募集します。 葛飾区滞納管理システム標準化に係る情報提供依頼について 募集中 結果 プロポーザル方式業者選定委員会の選定結果について（かつしかハッピーお届け隊事業に係る業務委託及びかつしかハッピーお...",
+    "matched_keywords": [
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:32.174247"
+  },
+  {
+    "title": "プロポーザル　江戸川区ホームページ",
+    "url": "https://www.city.edogawa.tokyo.jp/shigotosangyo/proposal/index.html",
+    "prefecture": "東京",
+    "organization": "江戸川区",
+    "snippet": "ページID：10226 ここから本文です。 プロポーザル 実施中のプロポーザル 「特別区有料ごみ処理券管理システム開発業務委託」に関する事業者選定プロポーザル 「ストレスチェック業務委託」に係るプロポーザルの実施 江戸川区名産品プロモーション支援事業業務委託に係るプロポーザル ひきこもり居場所事業等業務委託に係るプロポーザルの実施 「令和8年度江戸川区立保育園給食調理業務委託」受託事業者公募のお知...",
+    "matched_keywords": [
+      "公募",
+      "募集",
+      "事業者",
+      "プロポーザル"
+    ],
+    "update_date": null,
+    "source": "direct",
+    "fetched_at": "2026-01-14T13:09:32.461749"
+  },
+  {
     "title": "金沢市公共シェアサイクル「まちのり」 運営業務に係る公募型 ...",
     "url": "https://www4.city.kanazawa.lg.jp/soshikikarasagasu/kotsuseisakuka/gyomuannai/1/3/26581.html",
     "snippet": "本プロポーザルの応募には、令和6・7年度金沢市入札参加資格（役務）を有している必要があります。",
