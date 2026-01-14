@@ -35,13 +35,27 @@ def send_email(subject: str, body: str) -> bool:
         return False
 
 
+def sort_by_date(items: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
+    """更新日が新しい順にソート（日付なしは最後）"""
+    def get_date_key(item):
+        date_str = item.get("update_date") or ""
+        if not date_str:
+            return ""  # 日付なしは空文字（最後になる）
+        return date_str
+
+    return sorted(items, key=get_date_key, reverse=True)
+
+
 def notify_new_items(items: List[Dict[str, Any]]) -> bool:
     """新着案件を通知"""
     if not items:
         print("新着案件なし。通知をスキップします。")
         return False
 
-    subject = f"[シェアサイクル監視] 新着案件: {len(items)}件"
+    # 更新日が新しい順にソート
+    sorted_items = sort_by_date(items)
+
+    subject = f"[シェアサイクル監視] 新着案件: {len(sorted_items)}件"
 
     body_lines = [
         "シェアサイクル関連の新着案件が見つかりました。",
@@ -49,7 +63,7 @@ def notify_new_items(items: List[Dict[str, Any]]) -> bool:
         "=" * 50,
     ]
 
-    for i, item in enumerate(items, 1):
+    for i, item in enumerate(sorted_items, 1):
         body_lines.append(f"\n【案件{i}】")
         body_lines.append(f"タイトル: {item.get('title', '不明')}")
         if item.get("organization"):

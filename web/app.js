@@ -179,10 +179,6 @@ function filterData() {
 function sortData(sortOption) {
     filteredData.sort((a, b) => {
         switch (sortOption) {
-            case 'fetched_desc':
-                return new Date(b.fetched_at || 0) - new Date(a.fetched_at || 0);
-            case 'fetched_asc':
-                return new Date(a.fetched_at || 0) - new Date(b.fetched_at || 0);
             case 'update_desc':
                 // 更新日がないものは後ろに
                 if (!a.update_date && !b.update_date) return 0;
@@ -196,7 +192,11 @@ function sortData(sortOption) {
                 if (!b.update_date) return -1;
                 return new Date(a.update_date) - new Date(b.update_date);
             default:
-                return 0;
+                // デフォルトは更新日（新しい順）
+                if (!a.update_date && !b.update_date) return 0;
+                if (!a.update_date) return 1;
+                if (!b.update_date) return -1;
+                return new Date(b.update_date) - new Date(a.update_date);
         }
     });
 }
