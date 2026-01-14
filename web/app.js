@@ -97,7 +97,6 @@ function renderResults() {
 
     const html = filteredData.map(item => {
         const isNewItem = isNew(item.fetched_at);
-        const sourceLabel = item.source === 'google' ? 'Google' : '直接監視';
         const updateDateFormatted = formatDate(item.update_date);
 
         return `
@@ -112,13 +111,11 @@ function renderResults() {
                         ${isNewItem ? '<span class="badge badge-new">NEW</span>' : ''}
                         ${item.update_date ? `<span class="badge badge-date">更新: ${updateDateFormatted}</span>` : ''}
                         ${item.prefecture ? `<span class="badge badge-prefecture">${escapeHtml(item.prefecture)}</span>` : ''}
-                        <span class="badge badge-source">${sourceLabel}</span>
                     </div>
                 </div>
                 <div class="result-meta">
                     ${item.organization ? `<span>発注機関: ${escapeHtml(item.organization)}</span>` : ''}
                     ${item.update_date ? `<span class="update-date">記事更新日: ${updateDateFormatted}</span>` : ''}
-                    ${item.fetched_at ? `<span>取得: ${formatDateTime(new Date(item.fetched_at))}</span>` : ''}
                 </div>
                 ${item.snippet ? `<p class="result-snippet">${escapeHtml(item.snippet)}</p>` : ''}
             </article>
