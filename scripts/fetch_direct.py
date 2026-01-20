@@ -13,6 +13,7 @@ from typing import List, Dict, Any, Optional
 COMMON_KEYWORDS = [
     "シェアサイクル", "電動キックボード", "特定小型原動機付自転車", "特定小型原付",
     "マイクロモビリティ", "公募", "募集", "事業者", "プロポーザル",
+    "自転車シェアリング", "コミュニティサイクル", "サイクルポート",
 ]
 
 # 直接監視するページのリスト
@@ -183,6 +184,42 @@ WATCH_PAGES = [
         "url": "https://www.city.edogawa.tokyo.jp/shigotosangyo/proposal/index.html",
         "prefecture": "東京",
         "organization": "江戸川区",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # ===== 東京都本体（都庁各局） =====
+    # 東京都環境局（シェアサイクル政策所管）
+    {
+        "url": "https://www.kankyo.metro.tokyo.lg.jp/vehicle/management/bycicle_sharing/index.html",
+        "prefecture": "東京",
+        "organization": "東京都環境局",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 東京都都市整備局（都有地活用公募）
+    {
+        "url": "https://www.toshiseibi.metro.tokyo.lg.jp/machizukuri/machi_project/toshi_saisei/arichi_katuyou",
+        "prefecture": "東京",
+        "organization": "東京都都市整備局",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 東京都公募・募集一覧ポータル
+    {
+        "url": "https://www.metro.tokyo.lg.jp/purpose/opencall",
+        "prefecture": "東京",
+        "organization": "東京都",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 東京ベイeSGプロジェクト（モビリティ実証実験）
+    {
+        "url": "https://www.tokyobayesg.metro.tokyo.lg.jp/priorityprojects/recruitment2024.html",
+        "prefecture": "東京",
+        "organization": "東京ベイeSGプロジェクト",
+        "keywords": COMMON_KEYWORDS + ["実証実験", "モビリティ"],
+    },
+    # 東京都港湾局（臨海副都心公募）
+    {
+        "url": "https://www.kouwan.metro.tokyo.lg.jp/rinkai/youkou/index.html",
+        "prefecture": "東京",
+        "organization": "東京都港湾局",
         "keywords": COMMON_KEYWORDS,
     },
 ]
