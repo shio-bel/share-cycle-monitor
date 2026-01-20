@@ -222,6 +222,35 @@ WATCH_PAGES = [
         "organization": "東京都港湾局",
         "keywords": COMMON_KEYWORDS,
     },
+    # ===== 沖縄県 =====
+    # 沖縄県（公募・入札発注情報）
+    {
+        "url": "https://www.pref.okinawa.jp/shigoto/nyusatsukeiyaku/1015342/index.html",
+        "prefecture": "沖縄",
+        "organization": "沖縄県",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 那覇市（募集情報）
+    {
+        "url": "https://www.city.naha.okinawa.jp/category/bosyu/index.html",
+        "prefecture": "沖縄",
+        "organization": "那覇市",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 那覇市（入札・企画提案公告）
+    {
+        "url": "https://www.city.naha.okinawa.jp/business/touroku/nyuusatukoukoku/index.html",
+        "prefecture": "沖縄",
+        "organization": "那覇市",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 石垣市（契約管財課・公募型プロポーザル）
+    {
+        "url": "https://www.city.ishigaki.okinawa.jp/soshiki/keiyaku_kanzai/2/index.html",
+        "prefecture": "沖縄",
+        "organization": "石垣市",
+        "keywords": COMMON_KEYWORDS,
+    },
 ]
 
 

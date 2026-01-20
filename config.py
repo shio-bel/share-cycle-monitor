@@ -43,8 +43,9 @@ SEARCH_QUERIES = [
     "新モビリティ 事業者募集",
 ]
 
-# 関東地方のLGコード（都道府県コード）
-KANTO_LG_CODES = [
+# 監視対象地域のLGコード（都道府県コード）
+TARGET_LG_CODES = [
+    # 関東地方
     "08",  # 茨城県
     "09",  # 栃木県
     "10",  # 群馬県
@@ -52,10 +53,16 @@ KANTO_LG_CODES = [
     "12",  # 千葉県
     "13",  # 東京都
     "14",  # 神奈川県
+    # 沖縄県
+    "47",  # 沖縄県
 ]
+# 後方互換性のため
+KANTO_LG_CODES = TARGET_LG_CODES
 
 # 地域キーワード
-KANTO_KEYWORDS = ["東京", "神奈川", "埼玉", "千葉", "茨城", "栃木", "群馬"]
+TARGET_KEYWORDS = ["東京", "神奈川", "埼玉", "千葉", "茨城", "栃木", "群馬", "沖縄", "那覇", "石垣"]
+# 後方互換性のため
+KANTO_KEYWORDS = TARGET_KEYWORDS
 
 # データファイルパス
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
