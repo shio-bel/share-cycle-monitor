@@ -251,9 +251,24 @@ WATCH_PAGES = [
         "organization": "石垣市",
         "keywords": COMMON_KEYWORDS,
     },
-    # ===== 横浜万博協会 =====
+    # ===== 横浜万博協会（GREEN×EXPO 2027） =====
+    # 出展・協賛一覧（シェアサイクル営業カテゴリあり）
     {
-        "url": "https://www.expo2027yokohama.or.jp/news/",
+        "url": "https://expo2027yokohama.or.jp/sponsorship/",
+        "prefecture": "神奈川",
+        "organization": "横浜万博協会",
+        "keywords": COMMON_KEYWORDS + ["万博", "モビリティ", "出展", "営業", "協賛"],
+    },
+    # 契約情報（公募型プロポーザル掲載先）
+    {
+        "url": "https://expo2027yokohama.or.jp/contracts/",
+        "prefecture": "神奈川",
+        "organization": "横浜万博協会",
+        "keywords": COMMON_KEYWORDS + ["万博", "モビリティ", "プロポーザル", "委託"],
+    },
+    # ニュース
+    {
+        "url": "https://expo2027yokohama.or.jp/news/",
         "prefecture": "神奈川",
         "organization": "横浜万博協会",
         "keywords": COMMON_KEYWORDS + ["万博", "モビリティ"],
