@@ -8,10 +8,12 @@ from datetime import datetime
 from typing import List, Dict, Any
 
 from config import DATA_DIR, RESULTS_FILE, SEEN_URLS_FILE
+from query_manager import select_queries_for_run
 from fetch_google import fetch_all as fetch_google
 from fetch_kkj import fetch_all as fetch_kkj
 from fetch_direct import fetch_all as fetch_direct
 from fetch_njss import fetch_all as fetch_njss
+from fetch_procurement_sites import fetch_all as fetch_procurement
 from notifier import notify_new_items
 
 
@@ -92,23 +94,29 @@ def main():
     seen_urls = load_seen_urls()
     print(f"既出URL数: {len(seen_urls)}")
 
+    # クエリ選択（ローテーション）
+    print("\n--- クエリ選択 ---")
+    selected = select_queries_for_run()
+
     # 各APIからデータ取得
     print("\n--- Google Custom Search API ---")
-    google_results = fetch_google()
+    google_results = fetch_google(selected.get("google", []))
 
     print("\n--- 官公需情報ポータルAPI ---")
     kkj_results = fetch_kkj()
 
     print("\n--- NJSS（Google経由） ---")
-    njss_results = fetch_njss()
+    njss_results = fetch_njss(selected.get("njss", []))
+
+    print("\n--- 入札サイト横断検索 ---")
+    procurement_results = fetch_procurement(selected)
 
     print("\n--- 直接監視 ---")
     direct_results = fetch_direct()
 
     # 結果を統合
     print("\n--- 結果統合 ---")
-    # Google + NJSS + 直接監視の結果を統合
-    combined_google = google_results + njss_results + direct_results
+    combined_google = google_results + njss_results + procurement_results + direct_results
     all_results, new_results = merge_results(combined_google, kkj_results, seen_urls)
     print(f"全結果: {len(all_results)}件")
     print(f"新着: {len(new_results)}件")

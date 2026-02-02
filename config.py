@@ -13,47 +13,60 @@ GMAIL_ADDRESS = os.environ.get("GMAIL_ADDRESS", "")
 GMAIL_APP_PASSWORD = os.environ.get("GMAIL_APP_PASSWORD", "")
 NOTIFY_EMAIL = os.environ.get("NOTIFY_EMAIL", "")
 
-# 検索設定
-SEARCH_QUERIES = [
-    # シェアサイクル
-    "シェアサイクル 公募",
-    "シェアサイクル 入札",
-    "シェアサイクル 事業者",
-    "シェアサイクル 募集",
-    "自転車シェア 公募",
-    "自転車シェア 入札",
-    "サイクルポート 公募",
-    "サイクルポート 事業者",
-    "サイクルポート 募集",
-    "シェアリング自転車 公募",
-    "シェアサイクル 用地",
-    # 東京都環境局の正式名称
-    "自転車シェアリング 公募",
-    "自転車シェアリング 事業者",
-    "コミュニティサイクル 公募",
-    "コミュニティサイクル 事業者",
-    # 電動キックボード・特定小型原付
-    "電動キックボード 公募",
-    "電動キックボード 事業者募集",
-    "特定小型原動機付自転車 公募",
-    "特定小型原付 事業者",
-    "マイクロモビリティ 公募",
-    # モビリティ実証実験
-    "モビリティ 実証実験 公募",
-    "新モビリティ 事業者募集",
-    # プロポーザル・事業者選定
-    "プロポーザル シェアサイクル",
-    "企画提案 シェアサイクル",
-    "事業者選定 シェアサイクル",
-    # 連携・協定・スポンサー
-    "シェアサイクル 連携",
-    "シェアサイクル 協定",
-    "シェアサイクル スポンサー",
-    # 万博関連
+# 検索トピック（組み合わせ自動生成の基盤）
+# weight: 優先度スコア（高いほど頻繁に検索される）
+TOPICS = [
+    {"term": "シェアサイクル", "weight": 10},
+    {"term": "自転車シェアリング", "weight": 8},
+    {"term": "コミュニティサイクル", "weight": 7},
+    {"term": "サイクルポート", "weight": 6},
+    {"term": "シェアリング自転車", "weight": 5},
+    {"term": "電動キックボード", "weight": 8},
+    {"term": "特定小型原動機付自転車", "weight": 6},
+    {"term": "マイクロモビリティ", "weight": 7},
+]
+
+ACTIONS = [
+    {"term": "公募", "weight": 10},
+    {"term": "入札", "weight": 9},
+    {"term": "募集", "weight": 8},
+    {"term": "事業者", "weight": 8},
+    {"term": "プロポーザル", "weight": 7},
+    {"term": "企画提案", "weight": 7},
+    {"term": "事業者選定", "weight": 7},
+    {"term": "協定", "weight": 5},
+    {"term": "連携", "weight": 5},
+    {"term": "スポンサー", "weight": 4},
+    {"term": "実証実験", "weight": 6},
+    {"term": "用地", "weight": 4},
+]
+
+# イベント固有クエリ（期間限定で追加・削除）
+EVENT_QUERIES = [
     "横浜万博 シェアサイクル",
     "EXPO2027 シェアサイクル",
     "園芸博 シェアサイクル",
+    "横浜万博 電動キックボード",
 ]
+
+# 入札情報サイト（site:指定でGoogle検索）
+PROCUREMENT_SITES = [
+    {"name": "njss", "domain": "njss.info"},
+    {"name": "nyusatsu-king", "domain": "nyusatsu-king.com"},
+]
+
+# クォータ設定（Google CSE無料枠 = 100クエリ/日）
+QUOTA = {
+    "daily_limit": 100,
+    "runs_per_day": 4,
+    "per_run": 25,
+    "allocation": {
+        "google": 13,
+        "njss": 4,
+        "nyusatsu-king": 4,
+        "event": 4,
+    },
+}
 
 # 監視対象地域のLGコード（都道府県コード）
 TARGET_LG_CODES = [
@@ -80,3 +93,4 @@ KANTO_KEYWORDS = TARGET_KEYWORDS
 DATA_DIR = os.path.join(os.path.dirname(__file__), "data")
 RESULTS_FILE = os.path.join(DATA_DIR, "results.json")
 SEEN_URLS_FILE = os.path.join(DATA_DIR, "seen_urls.json")
+QUERY_STATE_FILE = os.path.join(DATA_DIR, "query_state.json")

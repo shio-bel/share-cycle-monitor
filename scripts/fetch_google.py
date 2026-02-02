@@ -7,7 +7,7 @@ import re
 import requests
 from datetime import datetime
 from typing import List, Dict, Any, Optional
-from config import GOOGLE_API_KEY, GOOGLE_CSE_ID, SEARCH_QUERIES, KANTO_KEYWORDS
+from config import GOOGLE_API_KEY, GOOGLE_CSE_ID, KANTO_KEYWORDS
 
 # 月名を数字に変換
 MONTH_MAP = {
@@ -17,7 +17,7 @@ MONTH_MAP = {
 }
 
 
-def search_google(query: str, start: int = 1) -> List[Dict[str, Any]]:
+def search_google(query: str, start: int = 1, date_restrict: str = "d30") -> List[Dict[str, Any]]:
     """Google Custom Search APIで検索を実行"""
     if not GOOGLE_API_KEY or not GOOGLE_CSE_ID:
         print("警告: GOOGLE_API_KEY または GOOGLE_CSE_ID が設定されていません")
@@ -30,6 +30,7 @@ def search_google(query: str, start: int = 1) -> List[Dict[str, Any]]:
         "q": query,
         "start": start,
         "num": 10,  # 最大10件
+        "dateRestrict": date_restrict,
     }
 
     try:
@@ -88,22 +89,24 @@ def extract_prefecture(text: str) -> str:
     return ""
 
 
-def fetch_all() -> List[Dict[str, Any]]:
-    """全ての検索クエリを実行して結果を収集"""
+def fetch_all(queries: List[str] = None) -> List[Dict[str, Any]]:
+    """検索クエリを実行して結果を収集。queriesが指定されなければ空リストを返す。"""
+    if not queries:
+        print("Google検索: クエリが指定されていません")
+        return []
+
     all_results = []
     seen_urls = set()
 
-    for query in SEARCH_QUERIES:
-        full_query = query
-        print(f"検索中: {full_query}")
+    for query in queries:
+        print(f"検索中: {query}")
 
-        items = search_google(full_query)
+        items = search_google(query)
         for item in items:
             url = item.get("link", "")
             if url and url not in seen_urls:
                 seen_urls.add(url)
                 result = parse_search_result(item)
-                # 都道府県を抽出
                 result["prefecture"] = extract_prefecture(
                     result["title"] + result["snippet"] + url
                 )
