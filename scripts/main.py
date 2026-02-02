@@ -11,6 +11,7 @@ from config import DATA_DIR, RESULTS_FILE, SEEN_URLS_FILE
 from fetch_google import fetch_all as fetch_google
 from fetch_kkj import fetch_all as fetch_kkj
 from fetch_direct import fetch_all as fetch_direct
+from fetch_njss import fetch_all as fetch_njss
 from notifier import notify_new_items
 
 
@@ -98,13 +99,16 @@ def main():
     print("\n--- 官公需情報ポータルAPI ---")
     kkj_results = fetch_kkj()
 
+    print("\n--- NJSS（Google経由） ---")
+    njss_results = fetch_njss()
+
     print("\n--- 直接監視 ---")
     direct_results = fetch_direct()
 
     # 結果を統合
     print("\n--- 結果統合 ---")
-    # Google + 直接監視の結果を統合
-    combined_google = google_results + direct_results
+    # Google + NJSS + 直接監視の結果を統合
+    combined_google = google_results + njss_results + direct_results
     all_results, new_results = merge_results(combined_google, kkj_results, seen_urls)
     print(f"全結果: {len(all_results)}件")
     print(f"新着: {len(new_results)}件")

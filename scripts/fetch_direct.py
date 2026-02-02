@@ -251,6 +251,64 @@ WATCH_PAGES = [
         "organization": "石垣市",
         "keywords": COMMON_KEYWORDS,
     },
+    # ===== 横浜万博協会 =====
+    {
+        "url": "https://www.expo2027yokohama.or.jp/news/",
+        "prefecture": "神奈川",
+        "organization": "横浜万博協会",
+        "keywords": COMMON_KEYWORDS + ["万博", "モビリティ"],
+    },
+    # ===== 政令指定都市 =====
+    # 横浜市
+    {
+        "url": "https://www.city.yokohama.lg.jp/business/nyusatsu/keiyaku/proposal/",
+        "prefecture": "神奈川",
+        "organization": "横浜市",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 川崎市
+    {
+        "url": "https://www.city.kawasaki.jp/jigyou/category/77-1-0-0-0-0-0-0-0-0.html",
+        "prefecture": "神奈川",
+        "organization": "川崎市",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # さいたま市
+    {
+        "url": "https://www.city.saitama.lg.jp/jigyosha/nyusatsu/proposal/index.html",
+        "prefecture": "埼玉",
+        "organization": "さいたま市",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # 千葉市
+    {
+        "url": "https://www.city.chiba.jp/zaiseikyoku/zaisei/keiyaku/proposal.html",
+        "prefecture": "千葉",
+        "organization": "千葉市",
+        "keywords": COMMON_KEYWORDS,
+    },
+    # ===== シェアサイクル事業者 =====
+    # ドコモ・バイクシェア
+    {
+        "url": "https://www.d-bikeshare.com/news/",
+        "prefecture": "",
+        "organization": "ドコモ・バイクシェア",
+        "keywords": COMMON_KEYWORDS + ["連携", "協定", "新規"],
+    },
+    # HELLO CYCLING
+    {
+        "url": "https://www.hellocycling.jp/news/",
+        "prefecture": "",
+        "organization": "HELLO CYCLING",
+        "keywords": COMMON_KEYWORDS + ["連携", "協定", "新規"],
+    },
+    # Luup
+    {
+        "url": "https://luup.sc/news/",
+        "prefecture": "",
+        "organization": "Luup",
+        "keywords": COMMON_KEYWORDS + ["連携", "協定", "新規"],
+    },
 ]
 
 

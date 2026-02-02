@@ -94,8 +94,7 @@ def fetch_all() -> List[Dict[str, Any]]:
     seen_urls = set()
 
     for query in SEARCH_QUERIES:
-        # site:*.lg.jp を追加して自治体サイトに限定
-        full_query = f"site:*.lg.jp {query}"
+        full_query = query
         print(f"検索中: {full_query}")
 
         items = search_google(full_query)
